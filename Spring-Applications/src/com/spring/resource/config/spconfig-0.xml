@@ -1,0 +1,36 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- first hello world example -->
+	<bean id="wBean" class="com.spring.a.first.WelcomeBean">
+		<property name="message" value="Welcome to spring" />
+	</bean>
+	
+	<!-- setter injection -->
+	<bean id="car1" class="com.spring.b.dependencyinjection.Car">
+		<property name="color">
+			<value>white</value>
+		</property>
+		<property name="make" value="Honda" />
+		<property name="model" value="prudele" />
+		<property name="year" value="1997" />
+
+	</bean>
+
+	<!-- constructor injection -->
+	<bean id="car2" class="com.spring.b.dependencyinjection.Car">
+		<constructor-arg value="black" />
+		<constructor-arg value="maruti" />
+		<constructor-arg value="mmmns" />
+		<constructor-arg value="2012" />
+
+	</bean>
+
+	<!-- Reference to other beans -->
+	<bean id="insure" class="com.spring.b.dependencyinjection.InsuranceImpl">
+		<property name="car" ref="car2" />
+	</bean>
+
+
+</beans>

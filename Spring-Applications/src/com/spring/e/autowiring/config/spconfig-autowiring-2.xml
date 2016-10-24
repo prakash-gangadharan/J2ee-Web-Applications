@@ -1,0 +1,20 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- auto wire byType -->
+	<bean id="CustomerBean2" class="com.spring.e.autowiring.Customer" autowire="byType">
+		<property name="id" value="102" />
+	</bean>
+
+				<!-- here id name is different -->
+	<bean id="personBean" class="com.spring.e.autowiring.Person">
+		<property name="name" value="divya" />
+		<property name="address" value="New st" />
+		<property name="age" value="21" />
+	</bean>
+
+</beans>
+
+

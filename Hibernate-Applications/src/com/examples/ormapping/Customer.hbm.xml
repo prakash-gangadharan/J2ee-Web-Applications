@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ormapping.customer.bean">
+	<class name="Customer" table="customer">
+
+		<id name="customerId" column="customer_id">
+			<generator class="sequence">
+				<param name="sequence">cust_seq</param>
+			</generator>
+		</id>
+
+		<property name="name" />
+
+		<many-to-one name="address" class="com.ormapping.customer.bean.Address"
+			column="address_id" cascade="all" unique="true" />
+		<set name="orders" table="order_tbl" inverse="true" lazy="true">
+			<key>
+				<column name="customer_id" not-null="true" />
+			</key>
+			<one-to-many class="com.ormapping.customer.bean.Order" />
+		</set>
+
+
+	</class>
+</hibernate-mapping>

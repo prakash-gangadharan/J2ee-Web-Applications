@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.product.bean">
+	<class name="Emp" table="employee">
+
+		<id name="empno" type="int" column="empno">
+			<generator class="increment" />
+			<!-- <generator class="sequence"> <param name="sequence">MySeq</param> 
+				</generator> -->
+		</id>
+
+		<property name="ename" length="10" />
+		<property name="sal" />
+		<property name="desig" type="string" column="designation" length="10" />
+
+	</class>
+	<query name="TeamLeader">
+		from Emp where desig = 'Team Leader'
+	</query>
+	<query name="Desig">
+		from Emp where desig=:desig
+	</query>
+	<query name="Sal">
+		<![CDATA[from Emp where sal>:salary]]>
+	</query>
+	<sql-query name="EmpQry">
+		select * from employee
+	</sql-query>
+	<sql-query name="ChangeSal">
+		<![CDATA[CALL salary_inc(?, ?)]]>
+	</sql-query>
+</hibernate-mapping>

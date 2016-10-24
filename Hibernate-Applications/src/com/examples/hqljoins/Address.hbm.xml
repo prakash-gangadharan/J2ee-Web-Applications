@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hqljoins.customer.bean">
+	<class name="Address" table="address">
+
+		<id name="addressId" type="long" column="address_id">
+			<generator class="sequence">
+				<param name="sequence">addr_seq</param>
+			</generator>
+		</id>
+		
+		<property name="addressLine1" type="string" column="address_line1" />
+		<property name="addressLine2" type="string" column="address_line2" />
+		<property name="city" type="string" column="city" />
+		<property name="state" type="string" column="state" />
+		<property name="pincode" type="int" column="pincode" />
+		
+	</class>
+</hibernate-mapping>

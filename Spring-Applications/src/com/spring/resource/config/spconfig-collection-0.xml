@@ -1,0 +1,39 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="setCollection" class="com.spring.f.collection.SetCollection">
+		<property name="students">
+			<set>
+				<value>java4s</value>
+				<value>sun</value>
+				<value>oracle</value>
+				<value>sun</value>
+				<value>sun</value>
+			</set>
+		</property>
+		<property name="servers">
+			<list>
+				<value>fedora</value>
+				<value>linux</value>
+				<value>ubuntu</value>
+				<value>redhat</value>
+				<value>fedora</value>
+			</list>
+		</property>
+		<property name="modules">
+			<map>
+				<entry key="Application">
+					<value>tomcat</value>
+				</entry>
+				<entry key="server">
+					<value>fedora</value>
+				</entry>
+				<entry key="database">
+					<value>postgres</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>
