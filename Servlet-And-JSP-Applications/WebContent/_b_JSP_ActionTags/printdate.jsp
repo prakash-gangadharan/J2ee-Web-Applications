@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>jsp:include action tag with parameter</title>
 </head>
 <body>
-	<h4>Header</h4>
-		<jsp:include page="printdate.jsp">
-			<jsp:param name="uName" value="Prakash" />
-		</jsp:include>
-	<h4>footer</h4>
+	<% out.print("Today is: "+java.util.Calendar.getInstance().getTime()); %> 
+	<br/><br/>Username : <%= request.getParameter("uname") %>
+	
+	
+	<!-- Passing parameters dynamically with href -->
+	<br/>Param 1 : <%= request.getParameter("name") %>
+	<br/>Param 2 : <%= request.getParameter("level") %>
 </body>
 </html>
