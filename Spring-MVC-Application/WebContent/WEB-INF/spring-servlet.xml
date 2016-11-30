@@ -12,4 +12,19 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 		<property name="prefix" value="/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+	<property name="username" value="system"></property>
+	<property name="password" value="smith"></property>
+	</bean>
+	
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+	<property name="dataSource" ref="ds"></property>
+	</bean>
+	
+	<bean id="dao" class="com.springmvc.example.dao.EmpDao">
+	<property name="template" ref="jt"></property>
+	</bean>
 </beans>

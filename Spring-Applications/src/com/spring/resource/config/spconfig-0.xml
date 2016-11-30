@@ -3,8 +3,9 @@
 
 <beans>
 	<!-- first hello world example -->
-	<bean id="wBean" class="com.spring.a.first.WelcomeBean">
-		<property name="message" value="Welcome to spring" />
+<!-- 	<bean id="wBean" class="com.spring.a.first.WelcomeBean"> -->
+	<bean id="wBean" class="com.spring.a.first.WelcomeBean" scope="prototype">
+		<property name="message" value="Welcome to Spring." />
 	</bean>
 	
 	<!-- setter injection -->
