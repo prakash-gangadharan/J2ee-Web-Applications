@@ -7,10 +7,10 @@
        http://www.springframework.org/schema/aop   
        http://www.springframework.org/schema/aop/spring-aop.xsd">  
   
-  <bean id="opBean" class="com.spring.i.aop.Operation"></bean>
   
-  <bean id="trackMyBean" class="com.spring.i.aop.TrackOperation"></bean>
-  
-  <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>  
+    <bean id="opBean" class="com.spring.i.aop.Operation">   </bean>  
+    <bean id="trackMyBean" class="com.spring.i.aop.TrackOperation"></bean>  
+    
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>  
           
-</beans>
+</beans> 

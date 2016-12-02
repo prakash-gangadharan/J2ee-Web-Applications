@@ -10,3 +10,5 @@ spring-webmvc-3.0.1.RELEASE.jar
 
 org.springframework.jdbc-3.0.1.RELEASE-A.jar
 org.springframework.transaction-3.0.1.RELEASE-A.jar
+
+com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar
