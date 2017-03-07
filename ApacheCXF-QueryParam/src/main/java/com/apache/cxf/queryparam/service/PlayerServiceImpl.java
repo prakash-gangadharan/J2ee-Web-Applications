@@ -6,6 +6,35 @@ import org.springframework.stereotype.Service;
 
 @Service("playerService")
 public class PlayerServiceImpl implements IPlayerService {
+	
+	/**
+	 * this method takes one argument from PathParam and returns a Response
+	 */
+	@Override
+	public Response welcomePlayerUsingPathParam(String playerName) {
+
+		String greetMessage = "Welcome " + playerName + " to Lords - the home of cricket";
+		return Response
+				.status(200)
+				.entity(greetMessage)
+				.build();
+	}
+	
+	/**
+	 * this method takes three argument from PathParam and returns a Response
+	 */
+	@Override
+	public Response getPlayerInfoUsingPathParam(String playerName, int age, int matches) {
+
+		String playerInfo = "[name=" + playerName +  ", age=" + age + ", matches=" + matches + "]";
+		return Response
+				.status(200)
+				.entity(playerInfo)
+				.build();
+	}
+	
+	
+	
 
 	/**
 	 * this method takes one argument from QueryParam and returns a Response
@@ -13,7 +42,10 @@ public class PlayerServiceImpl implements IPlayerService {
 	public Response welcomePlayer(String playerName) {
 
 		String greetMessage = "Welcome " + playerName + " to Lords - the home of cricket";
-		return Response.status(200).entity(greetMessage).build();
+		return Response
+				.status(200)
+				.entity(greetMessage)
+				.build();
 	}
 
 	/**
@@ -22,6 +54,9 @@ public class PlayerServiceImpl implements IPlayerService {
 	public Response getPlayerInfo(String playerName, int age, int matches) {
 
 		String playerInfo = "[name=" + playerName +  ", age=" + age + ", matches=" + matches + "]";
-		return Response.status(200).entity(playerInfo).build();
+		return Response
+				.status(200)
+				.entity(playerInfo)
+				.build();
 	}
 }
